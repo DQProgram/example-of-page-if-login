@@ -1,0 +1,41 @@
+$(document).ready(function(){
+$("#excluir").hide('fast');
+$("#visualizar").hide('fast');
+$("#adicionar").click(function(){
+var cod_produto = $("#cod_produto").val();
+var quantidade = $("#quantidade").val();
+$.getJSON('adicionar_carrinho.php?cod_produto_quantidade='+cod_produto+'@'+if(retorno[0].resposta == 'inseriu'){
+alert('O produto foi inserido em seu carrinho.');
+$("#quantidade").hide('fast');
+$("#adicionar").hide('fast');
+$("#excluir").show('fast');
+$("#visualizar").show('fast');
+}else{
+if(retorno[0].resposta == 'jainserido'){
+alert('Produto já inserido no carrinho!');
+$("#quantidade").hide('fast');
+$("#adicionar").hide('fast');
+$("#excluir").show('fast');
+$("#visualizar").show('fast');
+}else{
+alert('O produto não foi inserido!');
+}
+}
+});
+});
+$("#excluir").click(function(){
+var cod_produto = $("#cod_produto").val();
+$.getJSON('exclui_carrinho.php?cod_produto='+cod_produto, function(retorno){
+if(retorno[0].resposta == 'excluiu'){
+alert('O produto foi excluido de seu carrinho.');
+$("#quantidade").show('fast');
+$("#adicionar").show('fast');
+$("#excluir").hide('fast');
+$("#visualizar").hide('fast');
+}
+});
+});
+$("#visualizar").click(function(){
+window.open('carrinho.php','_blank');
+});
+});

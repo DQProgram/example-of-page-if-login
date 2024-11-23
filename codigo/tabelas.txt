@@ -1,0 +1,8 @@
+ja tenho as de users
+users_tipos_users
+(id_users_tipos_users
+id_user(vem da primeira tabela)
+id_tipos_users)
+tipos_users(
+id_tipos_users
+tipo(admin e normal))

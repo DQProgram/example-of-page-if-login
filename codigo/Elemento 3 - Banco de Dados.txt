@@ -1,0 +1,34 @@
+Elemento 3 - Banco de Dados:
+Desenho do Modelo de Dados:
+
+Projetar as tabelas relacionais na base de dados.
+Definir a estrutura do banco de dados para armazenar skins e informações dos utilizadores.
+Implementação de Consultas Preparadas:
+
+Desenvolver consultas preparadas para inserir, modificar, apagar e listar dados.
+Garantir a segurança e eficiência nas operações do banco de dados.
+Integração com o Back-end:
+
+Estabelecer a conexão entre o back-end e o banco de dados.
+Garantir que as operações CRUD utilizem consultas preparadas.
+<?php
+	//this is the App configuration file, where all relevant parameters are defined.
+	
+	//validation parameters
+	$minUsername = 4;
+	$maxUsername = 32;
+	$minPassword = 6;
+	$maxPassword = 48;
+	
+	//database parameters
+	$dbHost = "localhost";
+	$dbUsername = "ana";
+	$dbPassword = "cm";
+	$dbName = "trabalho";
+	
+	//pages that can be viewed without authentication - add more if needed.
+	$pages = array('index',
+						'registerForm',
+						'loginForm',
+	              );
+?>
